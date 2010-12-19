@@ -1,0 +1,53 @@
+<html>
+<head>
+<script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="application/javascript" src="../jquery.tooltip.js"></script>
+
+<link rel="stylesheet" type="text/css" media="all"   href="../jquery.tooltip.css" />
+
+<script>
+$(function(){
+	// traditional non intrusive javascript
+	$('p').tooltip({ track:true,delay:0,showURL:false,showBody:" - ",fade:250,opacity:1} );
+
+	// programatic calling
+	$('#list li').hover(
+		function(){
+			$('#mes').text($(this).text());
+		},
+		function(){
+			$('#mes').text('');
+		}
+	);
+
+
+});
+
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<p title="this is a tooltip - this is secondary text">more stuff herer</p>
+
+
+<ul id="list">
+<li>number 1</li>
+<li>number 2</li>
+<li>number 3</li>
+<li>number 4</li>
+<li>number 5</li>
+<li>number 6</li>
+</ul>
+<div id="mes">crap</div>
+
+
+</body>
+</html>

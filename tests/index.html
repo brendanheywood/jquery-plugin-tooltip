@@ -15,7 +15,7 @@ $(function(){
 	$('#list1 li').hover(
 		function(){
 			$('#mes').text($(this).text());
-			$.tooltip.set({text: '1: '+$(this).text() , showURL:false,showBody:" - ",fade:250,opacity:1} );
+			$.tooltip.set({text: '1 - '+$(this).text() , showURL:false,showBody:" - ",fade:250,opacity:1} );
 		},
 		function(){
 			$('#mes').text('');
@@ -25,7 +25,7 @@ $(function(){
 	$('#list2 li').hover(
 		function(){
 			$('#mes').text($(this).text());
-			$.tooltip.set({text: '2: '+$(this).text() , track:true,delay:0,showURL:false,showBody:" - ",opacity:1 });
+			$.tooltip.set({text: '2 - '+$(this).text() , track:true,delay:0,showURL:false,showBody:" - ",opacity:1 });
 		},
 		function(){
 			$('#mes').text('');

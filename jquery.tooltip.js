@@ -41,6 +41,17 @@
 		},
 		block: function() {
 			$.tooltip.blocked = !$.tooltip.blocked;
+		},
+		set: function(settings){
+			settings = $.extend({}, $.tooltip.defaults, settings);
+			createHelper(settings);
+			document.body.tooltipText = settings.text;
+			$.data(document.body, "tooltip", settings);
+			if (settings.text){
+				$(document.body).mouseover(save).trigger('mouseover');
+			} else {
+				$(document.body).mouseout(hide)	.trigger('mouseout');
+			}
 		}
 	};
 	

@@ -5,27 +5,36 @@
 
 <link rel="stylesheet" type="text/css" media="all"   href="../jquery.tooltip.css" />
 
-<script>
+<script text/javascript>
 $(function(){
 	// traditional non intrusive javascript
-	$('p').tooltip({ track:true,delay:0,showURL:false,showBody:" - ",fade:250,opacity:1} );
+	$('h1').tooltip({ delay:1000,showURL:false,showBody:" - ",fade:250,opacity:1} );
+	$('p' ).tooltip({ track:true,delay:0,showURL:false,showBody:" - ",fade:250,opacity:1} );
 
 	// programatic calling
-	$('#list li').hover(
+	$('#list1 li').hover(
 		function(){
 			$('#mes').text($(this).text());
+			$.tooltip.set({text: '1: '+$(this).text() , showURL:false,showBody:" - ",fade:250,opacity:1} );
 		},
 		function(){
 			$('#mes').text('');
+			$.tooltip.set();
+		}
+	);
+	$('#list2 li').hover(
+		function(){
+			$('#mes').text($(this).text());
+			$.tooltip.set({text: '2: '+$(this).text() , track:true,delay:0,showURL:false,showBody:" - ",opacity:1 });
+		},
+		function(){
+			$('#mes').text('');
+			$.tooltip.set();
 		}
 	);
 
 
 });
-
-
-
-
 
 </script>
 
@@ -35,10 +44,22 @@ $(function(){
 <body>
 
 
+<h1 title="this is a tooltip - this is secondary text">more stuff herer</h1>
+
 <p title="this is a tooltip - this is secondary text">more stuff herer</p>
 
 
-<ul id="list">
+<h4>list one with slow hover and no tracking</h4>
+<ul id="list1">
+<li>number 1</li>
+<li>number 2</li>
+<li>number 3</li>
+<li>number 4</li>
+<li>number 5</li>
+<li>number 6</li>
+</ul>
+<h4>list two with fast hover and tracking</h4>
+<ul id="list2">
 <li>number 1</li>
 <li>number 2</li>
 <li>number 3</li>
